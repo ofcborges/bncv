@@ -14,8 +14,22 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
-		<div id="myNav" class="menu-closed">
+	<body class="is-preload"  data-spy="scroll" data-target=".navbar" data-offset="50">
+		<div id="search-section">
+		<form method="post" action="#">
+			<div class="fields">
+				<div class="field">
+					<div class="input-group mb-3">
+    <input id="search-input" type="text" class="form-control">
+    <div class="input-group-append">
+      <span class="input-group-text" onclick="openSearch()"><i class="fa fa-search"></i></span>
+    </div>
+  </div>
+</div>
+</div>
+		</form>
+	</div>
+		<div id="myNav" class="menu-opened">
  <nav id="myNavBar" class="navbar navbar-expand-lg">
 
   <!-- Links -->
@@ -30,9 +44,6 @@
       <a class="nav-link" href="javascript:void(0)" onclick="goToNav('servicos')">SERVIÇOS</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="javascript:void(0)" onclick="goToNav('catalogo')">CATÁLOGO</a>
-    </li>
-    <li class="nav-item">
       <a class="nav-link" href="javascript:void(0)" onclick="goToNav('eventos')">EVENTOS</a>
     </li>
 	<li class="nav-item">
@@ -45,10 +56,9 @@
 
 </nav>
 </div>
-		<div class="icon-bar align-center">
-		  <span id="menu-btn" onclick="toogleNav()">&#9776;</a> 
+		<div id="iconbar" class="icon-bar align-center">
+		  <span id="menu-btn" class="amarelo" onclick="toogleNav()">&#9776; </span>
 		</div>
-
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
@@ -58,89 +68,102 @@
 						<!-- Panel (Banner) -->
 							<section id="home" class="panel">
 							<div class="container">
-									<h1 class="major">Biblioteca Nacional<br />
+								<div class="container inner-container">
+									<div class="row">
+										<div class="col-md-6">
+									<img id="bncv-image" src="images/bncv.png">
+									<h1 id="home-h1"class="castanho">Biblioteca Nacional<br />
 									de Cabo Verde</h1>
-									<p>This is <strong>Ethereal</strong>, a free site template by AJ for <a href="https://html5up.net">HTML5 UP</a>. It’s fully responsive, built on HTML5 and CSS3, and released entirely for free under the Creative Commons license. Hope you dig it :)</p>
+									<p class="cinza">A Biblioteca Nacional de Cabo Verde, localizada na capital Praia, é a biblioteca nacional da República de Cabo Verde. A Biblioteca Nacional de Cabo Verde é responsável pelo sistema do depósito legal em Cabo Verde.</p>
 									<ul class="actions">
-										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
+										<li><a href="#" class="button small">Ler mais</a></li>
 									</ul>
+									<ul class="icons">
+											<li><a href="#" class="icon fa-facebook" target=_blank><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-youtube"><span class="label">GitHub</span></a></li>
+										</ul>
+								</div>
+							</div>
+							<div class="col-md-6"></div>
+							</div>
 								</div>
 							</section>
+							<!--
+							<section id="slideShow" class="panel">
+							<div class="container">
+									<h1 class="castanho">SlideShow de Cabo Verde</h1>
+								</div>
+							</section>
+							<section id="spaceDiv" class="panel">
+							<div class="container">
+									
+								</div>
+							</section>-->
 			<section id="bncv" class="panel">
 								<div class="container">
-									<h1 class="major">Hello, my name<br />
-									is Ethereal</h1>
-									<p>This is <strong>Ethereal</strong>, a free site template by AJ for <a href="https://html5up.net">HTML5 UP</a>. It’s fully responsive, built on HTML5 and CSS3, and released entirely for free under the Creative Commons license. Hope you dig it :)</p>
-									<ul class="actions">
-										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
-									</ul>
+									<div class="container inner-container">
+										<div class="row">
+											<div class="col-md-6">
+									<h1 id="bncv-h1" class="salmao">Biblioteca Nacional<br/>
+									de Cabo Verde</h1>
+									<p class="cinza">A Biblioteca Nacional de Cabo Verde, localizada na capital Praia, é a biblioteca nacional da República de Cabo Verde. A Biblioteca Nacional de Cabo Verde é responsável pelo sistema do depósito legal em Cabo Verde.</p>
+								</div>
+								<div class="col-md-6"></div>
+							</div>
 								</div>
 							</section>
 <section id="servicos" class="panel">
 								<div class="container">
-									<h1 class="major">Hello, my name<br />
-									is Ethereal</h1>
-									<p>This is <strong>Ethereal</strong>, a free site template by AJ for <a href="https://html5up.net">HTML5 UP</a>. It’s fully responsive, built on HTML5 and CSS3, and released entirely for free under the Creative Commons license. Hope you dig it :)</p>
-									<ul class="actions">
-										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
-									</ul>
+									<div class="container inner-container">
+										<div class="row">
+											<div class="col-md-6">
+									<h1 id="servicos-h1" class="castanho">Serviços</h1>
+									<p class="cinza">A Biblioteca Nacional de Cabo Verde, localizada na capital Praia, é a biblioteca nacional da República de Cabo Verde. A Biblioteca Nacional de Cabo Verde é responsável pelo sistema do depósito legal em Cabo Verde.</p>
 								</div>
-							</section>
-<section id="catalogo" class="panel">
-								<div class="container">
-									<h1 class="major">Hello, my name<br />
-									is Ethereal</h1>
-									<p>This is <strong>Ethereal</strong>, a free site template by AJ for <a href="https://html5up.net">HTML5 UP</a>. It’s fully responsive, built on HTML5 and CSS3, and released entirely for free under the Creative Commons license. Hope you dig it :)</p>
-									<ul class="actions">
-										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
-									</ul>
-								</div>
+								<div class="col-md-6"></div>
+							</div>
+							</div>
 							</section>
 <section id="eventos" class="panel">
 								<div class="container">
-									<h1 class="major">Hello, my name<br />
-									is Ethereal</h1>
-									<p>This is <strong>Ethereal</strong>, a free site template by AJ for <a href="https://html5up.net">HTML5 UP</a>. It’s fully responsive, built on HTML5 and CSS3, and released entirely for free under the Creative Commons license. Hope you dig it :)</p>
-									<ul class="actions">
-										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
-									</ul>
+									<div class="container inner-container">
+										<div class="col-md-6">
+									<h1 class="castanho">Eventos</h1>
+									<p class="cinza">A Biblioteca Nacional de Cabo Verde, localizada na capital Praia, é a biblioteca nacional da República de Cabo Verde. A Biblioteca Nacional de Cabo Verde é responsável pelo sistema do depósito legal em Cabo Verde.</p>
 								</div>
+								<div class="col-md-6"></div>
+							</div>
 							</section>
 <section id="blog" class="panel">
 								<div class="container">
-									<h1 class="major">Hello, my name<br />
-									is Ethereal</h1>
-									<p>This is <strong>Ethereal</strong>, a free site template by AJ for <a href="https://html5up.net">HTML5 UP</a>. It’s fully responsive, built on HTML5 and CSS3, and released entirely for free under the Creative Commons license. Hope you dig it :)</p>
-									<ul class="actions">
-										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
-									</ul>
+									<div class="container inner-container">
+<div class="row">
+										<div class="col-md-6">
+									<h1 class="castanho">Blog</h1>
+									<p class="cinza">A Biblioteca Nacional de Cabo Verde, localizada na capital Praia, é a biblioteca nacional da República de Cabo Verde. A Biblioteca Nacional de Cabo Verde é responsável pelo sistema do depósito legal em Cabo Verde.</p>
 								</div>
+								<div class="col-md-6"></div>
+							</div>
 							</section>
-<section id="contactos" class="panel">
+					<section id="contactos" class="panel">
 								<div class="container">
-									<h1 class="major">Hello, my name<br />
-									is Ethereal</h1>
-									<p>This is <strong>Ethereal</strong>, a free site template by AJ for <a href="https://html5up.net">HTML5 UP</a>. It’s fully responsive, built on HTML5 and CSS3, and released entirely for free under the Creative Commons license. Hope you dig it :)</p>
-									<ul class="actions">
-										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
-									</ul>
+									<div class="container inner-container">
+										<div class="col-md-6">
+									<h1 class="castanho">Contactos</h1>
+									<p class="cinza">A Biblioteca Nacional de Cabo Verde, localizada na capital Praia, é a biblioteca nacional da República de Cabo Verde. A Biblioteca Nacional de Cabo Verde é responsável pelo sistema do depósito legal em Cabo Verde.</p>
 								</div>
+								<div class="col-md-6"></div>
+							</div>
 							</section>
-
-
-						
-
-						<!-- Copyright -->
-							<div class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</div>
-
 					</div>
-
 			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/in-view.min.js"></script>
 			<script src="assets/js/main.js"></script>
 			 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>

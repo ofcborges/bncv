@@ -679,15 +679,112 @@
 						}, 275);
 
 					});
+					inView('#home-h1')
+					    .on('enter',function() {
+					    	$('#iconbar').removeClass();
+					    	$('#menu-btn').removeClass();
+
+					    	$('#iconbar').addClass('icon-bar align-center icon-bar-castanho-claro');
+					    	$('#menu-btn').addClass('amarelo');
+					    	
+  						console.log('home');
+				    });
+					    inView('#bncv-h1')
+					    .on('enter',function() {
+  						$('#iconbar').removeClass();
+					    	$('#menu-btn').removeClass();
+
+					    	$('#iconbar').addClass('icon-bar align-center icon-bar-salmao');
+					    	$('#menu-btn').addClass('castanho');
+					    	console.log('bncv');
+				    });
+					inView('#servicos-h1')
+					    .on('enter',function() {
+  						$('#iconbar').removeClass();
+					    	$('#menu-btn').removeClass();
+
+					    	$('#iconbar').addClass('icon-bar align-center icon-bar-castanho');
+					    	$('#menu-btn').addClass('castanho-mais-claro');
+					    	console.log('serviços');
+				    });
+					    inView('#eventos')
+					    .on('enter',function() {
+  						$('#iconbar').removeClass();
+					    	$('#menu-btn').removeClass();
+
+					    	$('#iconbar').addClass('icon-bar align-center icon-bar-castanho-mais-claro');
+					    	$('#menu-btn').addClass('branco');
+					    	console.log('eventos');
+				    });
+					    inView('#blog')
+					    .on('enter',function() {
+  						$('#iconbar').removeClass();
+					    	$('#menu-btn').removeClass();
+
+					    	$('#iconbar').addClass('icon-bar align-center icon-bar-castanho');
+					    	$('#menu-btn').addClass('castanho-mais-claro');
+					    	console.log('blog');
+				    });
+					    inView('#contactos')
+					    .on('enter',function() {
+  						$('#iconbar').removeClass();
+					    	$('#menu-btn').removeClass();
+
+					    	$('#iconbar').addClass('icon-bar align-center icon-bar-branco');
+					    	$('#menu-btn').addClass('castanho');
+					    	console.log('contactos');
+				    });
 
 })(jQuery);
 
 function goToNav(destination) {
 	toogleNav();
-    document.getElementById(destination).scrollIntoView({ block: 'end',  behavior: 'smooth' });
+	var menuBtn = document.getElementById("menu-btn");
+	var iconBar = document.getElementById("iconbar");
+	var element = document.getElementById(destination);
+
+
+	iconBar.className = "icon-bar align-center ";
+    
+    switch(destination) {
+    case 'home':{
+    	menuBtn.className = "amarelo";
+   		iconBar.className += "icon-bar-castanho-claro";
+        break;
+    }
+    case 'bncv':{
+    	menuBtn.className = "castanho";
+   		iconBar.className += "icon-bar-salmao";   
+        break;
+    }
+    case 'servicos':{
+   	 	menuBtn.className = "castanho-mais-claro";
+   		iconBar.className+="icon-bar-castanho";   
+        break;
+    }
+    case 'eventos':{
+    	menuBtn.className = "branco";
+    	iconBar.className+="icon-bar-castanho-mais-claro"; 
+        break;
+    }
+    case 'blog':{
+    	menuBtn.className = "castanho";
+    	iconBar.className+="icon-bar-amarelo"
+        break;
+    }
+    case 'contactos':
+    menuBtn.className = "castanho";
+    	iconBar.className+="icon-bar-branco"
+        break;
+}	
+	element.scrollIntoView({ block: 'end',  behavior: 'smooth' });
 }
 
 function toogleNav() {
     var element = document.getElementById("myNav");
-    element.classList.toggle("menu-opened");
+    element.classList.toggle("menu-closed");
 } 
+
+function openSearch(){
+	$()
+}
