@@ -679,7 +679,7 @@
 						}, 275);
 
 					});
-					inView('#home-h1')
+					/*inView('#home-h1')
 					    .on('enter',function() {
 					    	$('#iconbar').removeClass();
 					    	$('#menu-btn').removeClass();
@@ -733,12 +733,24 @@
 					    	$('#iconbar').addClass('icon-bar align-center icon-bar-branco');
 					    	$('#menu-btn').addClass('castanho');
 					    	console.log('contactos');
-				    });
+				    });*/
+					
 
 })(jQuery);
-
+(function () {
+   // Add active class to the current button (highlight it)
+var header = document.getElementById("myNavBar");
+var btns = header.getElementsByClassName("nav-link");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+})();
 function goToNav(destination) {
-	toogleNav();
+	"use strict";
 	var menuBtn = document.getElementById("menu-btn");
 	var iconBar = document.getElementById("iconbar");
 	var element = document.getElementById(destination);
@@ -769,7 +781,7 @@ function goToNav(destination) {
     }
     case 'blog':{
     	menuBtn.className = "castanho";
-    	iconBar.className+="icon-bar-amarelo"
+    	iconBar.className+="icon-bar-amarelo";
         break;
     }
     case 'contactos':
@@ -786,5 +798,6 @@ function toogleNav() {
 } 
 
 function openSearch(){
-	$()
+	var element = document.getElementById("search-input");
+	element.classList = "visible";
 }
